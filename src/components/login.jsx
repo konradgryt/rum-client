@@ -28,27 +28,19 @@ class Login extends React.Component {
     Utility.post('/user/login', data ).then(json => {
       console.log(json);
         if (json) {
-            this.setState({
-                message : this.SuccessMessage
-            });
+          this.props.view.renderOverview(this.state.username);
         } else {
-            this.setState({
-                message : this.ErrorMessage
-            });
+          this.setState({
+              message : this.ErrorMessage
+          });
         }
     });
     event.preventDefault();
   }
 
-  SuccessMessage = (
-    <div> 
-      success!
-    </div>
-  );
-
   ErrorMessage = (
     <div> 
-      bad luck my boi
+      error
     </div>
   );
 

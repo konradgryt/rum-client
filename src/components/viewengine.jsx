@@ -4,16 +4,19 @@ import Register from './register';
 import NavBar from './navbar';
 import Login from './login';
 import CardList from './cardlist';
+import Overview from './overview';
 
 class ViewEngine {
     contentContainer;
     navContainer;
     headerContainer;
+    paneContainer;
 
-    constructor(contentContainer, navContainer, headerContainer) {
+    constructor(contentContainer, navContainer, headerContainer, paneContainer) {
         this.contentContainer = contentContainer;
         this.navContainer = navContainer;
         this.headerContainer = headerContainer;
+        this.paneContainer = paneContainer;
     }
 
     /**
@@ -38,6 +41,13 @@ class ViewEngine {
     }
 
     /**
+     * Renders overview container of the web app
+     */
+    renderOverview(username) {
+        ReactDOM.render(<Overview view={this} username={username} />, this.headerContainer);
+    }
+
+    /**
      * Renders rum container of the web app
      */
     renderCardList() {
@@ -49,7 +59,7 @@ class ViewEngine {
      */
     renderIndex() {
          this.renderNav();
-         this.renderRegister();
+         this.renderLogin();
          this.renderCardList();
     }
 }
