@@ -1,0 +1,25 @@
+@import 'flex.scss';
+
+.navbar {
+    @include flex-row();
+    background-color: #A43;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 40px;
+
+    &__navitem {
+        display: flex;
+        width:100%; 
+        justify-content: center;
+        cursor: pointer;
+        border-right: 1px dotted black;
+         
+    }
+
+    &__navitem:last-child {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-right: none;
+    }
+}

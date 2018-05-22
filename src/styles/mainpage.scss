@@ -1,0 +1,16 @@
+@import 'flex.scss';
+
+.mainpage {
+
+  &__input {  
+  @include flex-row();
+
+    &--label {
+      font-size: 20px;
+    }
+
+    &--textfield {
+      
+    }
+  }
+}
