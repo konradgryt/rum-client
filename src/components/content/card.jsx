@@ -26,7 +26,7 @@ class Card extends React.Component {
             kettleType={this.props.kettleType}
             reviews={this.props.reviews} />, this.props.name);
         if (pane.classList.contains('close')) {
-            this.props.view.tooglePane();
+            this.props.view.tooglePane(true);
         }
     }
 
