@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Register from './register';
-import NavBar from './navbar';
-import Login from './login';
-import CardList from './cardlist';
-import Rum from './rum';
-import Overview from './overview';
-import RightPane from './rightpane';
+import Utility from './utility';
+//content
+import CardList from './content/cardlist';
+//header
+import Login from './header/login';
+import Register from './header/register';
+import Overview from './header/overview';
+//nav
+import NavBar from './nav/navbar';
+//pane
+import PaneBody from './pane/panebody';
 
 class ViewEngine {
     contentContainer;
@@ -53,13 +57,17 @@ class ViewEngine {
      * Renders rum container of the web app
      */
     renderCardList() {
-        ReactDOM.render(<Rum view={this} />, this.contentContainer);
+        ReactDOM.render(<CardList view={this} />, this.contentContainer);
     }
 
     renderPane() {
-        ReactDOM.render(<RightPane view={this} />, this.paneContainer);
+        ReactDOM.render(<PaneBody view={this} />, this.paneContainer);
     }
 
+    unmountPane() {
+      ReactDOM.unmountComponentAtNode(document.querySelector('#pane'));
+    }
+    
     /**
      * Renders index view of the app - all elements that are being displayed
      */
@@ -67,6 +75,9 @@ class ViewEngine {
          this.renderNav();
          this.renderLogin();
          this.renderCardList();
+         if (Utility.getFromLocalStorage('isPaneActive')) {
+             this.renderPane();
+         }
     }
 }
 

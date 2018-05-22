@@ -69,7 +69,7 @@ class Rum extends React.Component {
         return (
             <section className='rum'>
                 <form onSubmit={this.handleSubmit}>
-                    <h1>Rum</h1>
+                    <h1>Add rum</h1>
                     <div>
                         <input id='name' type='text' onChange={(e) => this.handleKeyChange('name', e)}
                                placeholder='Name of rum'/>

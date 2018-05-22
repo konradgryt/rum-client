@@ -1,7 +1,8 @@
 import React from 'react';
+import Rum from './rum';
 //import Utility from '../logic/utility';
 
-class Card extends React.Component {
+class PaneBody extends React.Component {
 
   constructor(props) {
     super(props);
@@ -10,12 +11,11 @@ class Card extends React.Component {
 
   render() {
     return (
-      <section>
-          what
-       {this.props.name}
+      <section className='panebody'>
+          <Rum />
       </section>
     );
   }
 }
 
-export default Card;
+export default PaneBody;

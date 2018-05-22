@@ -9,7 +9,7 @@ class Overview extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className='overview'>
        {this.props.username}
       </section>
     );

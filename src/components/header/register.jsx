@@ -1,5 +1,5 @@
 import React from 'react';
-import Utility from '../logic/utility';
+import Utility from '../utility';
 
 export class Register extends React.Component {
     constructor(props) {

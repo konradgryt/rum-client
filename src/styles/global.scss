@@ -1,7 +1,8 @@
 @import 'flex.scss';
-@import 'navbar.scss';
-@import 'mainpage.scss';
-@import "login.scss";
+@import './nav/navbar.scss';
+@import './header/register.scss';
+@import './header/login.scss';
+@import './pane/rum.scss';
 
 * {
   margin: 0;
@@ -27,6 +28,12 @@ body {
   width: 20vw;
 }
 
+#pane {
+  @include flex-row();
+  height: 100%;
+  width: 20vw;
+}
+
 #header {
   height: 40px;
   width: 100%;
@@ -38,4 +45,11 @@ body {
   height: 100%;
   width: 100%;
   @include flex-column();
+}
+
+#wrapper2 {
+  height: 100%;
+  width: 100%;
+  @include flex-row();
+  justify-content: space-between; 
 }

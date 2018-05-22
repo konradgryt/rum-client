@@ -37,4 +37,10 @@
       align-self: center;
     }
   }
+
+  &__button {
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+  }
 }

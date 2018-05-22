@@ -1,5 +1,5 @@
 import React from 'react';
-import Utility from '../logic/utility';
+import Utility from '../utility';
 import Card from './card';
 
 class CardList extends React.Component {
@@ -20,7 +20,7 @@ class CardList extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className='cardlist'>
          {this.state.list.map(items =>
            <Card name={items.name}
                  image={items.image}
