@@ -1,25 +1,23 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Rum from './rum';
-
 //import Utility from '../logic/utility';
 
 class PaneBody extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-    render() {
-        return (
-            <section className='panebody'>
-                <div className='panebody__header'>
-                    <i className="material-icons">close</i>
-                </div>
-                <Rum/>
-            </section>
-        );
-    }
+  render() {
+    return (
+      <section className={this.state.class}> 
+          <i className="material-icons" onClick={() => { this.props.view.unmountPane()}} >close</i>
+          <Rum />
+      </section>
+    );
+  }
 }
 
 export default PaneBody;
