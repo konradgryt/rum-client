@@ -16,7 +16,10 @@ class Search extends React.Component {
   render() {
     return (
         <section className='navbar'>
-            <input className='navbar__navitem--search' placeholder='Search...'/>
+            <div className='navbar__position-relative'>
+                <i className="material-icons">search</i>
+                <input className='navbar__navitem--search'/>
+            </div>
             <div className='navbar__navitem'>Filtering</div>
             
             <div onClick={this.handleClick}>Add rum </div>

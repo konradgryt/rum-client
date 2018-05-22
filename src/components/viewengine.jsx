@@ -4,6 +4,7 @@ import Register from './register';
 import NavBar from './navbar';
 import Login from './login';
 import CardList from './cardlist';
+import Rum from './rum';
 import Overview from './overview';
 import RightPane from './rightpane';
 
@@ -52,7 +53,7 @@ class ViewEngine {
      * Renders rum container of the web app
      */
     renderCardList() {
-        ReactDOM.render(<CardList view={this} />, this.contentContainer);
+        ReactDOM.render(<Rum view={this} />, this.contentContainer);
     }
 
     renderPane() {
