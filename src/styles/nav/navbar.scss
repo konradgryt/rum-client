@@ -1,4 +1,4 @@
-@import 'flex.scss';
+@import '../flex.scss';
 
 .navbar {
   @include flex-column();
@@ -10,7 +10,7 @@
 
   &__position-relative {
     width: 100%;
-    margin-top: 70px;
+    margin-top: 50px;
     @include flex-column();
     justify-content: center;
     position: relative;
@@ -51,9 +51,5 @@
       color: #FB6304;
       background-color: #323232;
     }
-  }
-
-  ul {
-
   }
 }

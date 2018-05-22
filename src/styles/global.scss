@@ -6,6 +6,7 @@
 @import './content/card.scss';
 @import './content/cardlist.scss';
 @import './header/overview.scss';
+@import './pane/rumpane.scss';
 
 * {
   margin: 0;
@@ -34,7 +35,7 @@ body {
 
 #pane {
   @include flex-column();
-  background-color: #323232;
+  background-color: #242424;
   height: 100%;
   width: 350px;
   position: absolute;
@@ -69,7 +70,7 @@ body {
     i {
       position: absolute;
       right: 10px;
-      top: 10px;
+      top: 12px;
       color: #464646;
       &:hover {
         cursor: pointer;

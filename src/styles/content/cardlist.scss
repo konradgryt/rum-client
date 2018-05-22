@@ -1,6 +1,6 @@
 @import "../flex";
 
 .cardlist {
-  @include flex-row();
+  @include flex-row-wrap();
   width: 100%;
 }

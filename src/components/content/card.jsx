@@ -2,6 +2,7 @@ import React from 'react';
 //import ReviewList from './reviewlist';
 //import Utility from '../utility';
 import Review from './review';
+import RumPane from "../pane/rumpane";
 
 class Card extends React.Component {
 
@@ -12,7 +13,7 @@ class Card extends React.Component {
 
     focusCard() {
         this.props.view.tooglePane();
-        this.props.view.refreshPane(<Card 
+        this.props.view.refreshPane(<RumPane
             view={this.props.view}
             key={this.props.name}
             name={this.props.name}
@@ -47,7 +48,7 @@ class Card extends React.Component {
                                 image={items.image}
                                 rumId={items.rumId}
                                 userId={items.userId}
-                                rating={items.userId}
+                                rating={items.rating}
                                 additionalInfo={items.additionalInfo}
                             />)} 
                     </div>

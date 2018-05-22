@@ -1,0 +1,25 @@
+@import "../flex";
+
+.rum-pane {
+  &__image {
+    height: 300px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &__description {
+    padding: 20px;
+    color: #FFF;
+    div {
+      @include flex-row();
+      justify-content: flex-end;
+    }
+
+    &--left-alignment {
+      margin: 0 auto 0 0;
+    }
+  }
+}
