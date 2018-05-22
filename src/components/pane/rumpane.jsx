@@ -36,11 +36,9 @@ class RumPane extends React.Component {
                     <div><span className="rum-pane__description--left-alignment">Type of rum</span>{this.props.typeOfRum}</div>
                     <div><span className="rum-pane__description--left-alignment">Kettle type</span>{this.props.kettleType}</div>
                     <div><span className="rum-pane__description--left-alignment">Reviews</span>{this.props.reviews.map(item => <Review
-                        image={item.image}
-                        rumId={item.rumId}
-                        userId={item.userId}
                         rating={item.rating}
-                        additionalInfo={item.additionalInfo}
+                        image={item.image}
+                        message={item.message}
                     />)}</div>
                      <div id='makereview' class='hide' onClick={(e) => this.handleClick(e)}><span className="rum-pane__description--left-alignment">{this.state.reviewValue}
                     </span></div>

@@ -116,3 +116,11 @@ body {
 .show {
   visibility: visible;
 }
+
+.img {
+   height: 140px;
+    width: 140px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
