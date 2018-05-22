@@ -11,11 +11,9 @@ class Review extends React.Component {
   render() {
     return (
       <section className='review'>
-        <div> rum - {this.props.rumId}</div> 
-        <div> userid - {this.props.userId}</div>
-        <div> rating - {this.props.rating}</div>
-        <div> Image - {this.props.image}</div>
-        <div> additionalinfo - {this.props.additionalInfo}</div>
+        <div className='img' style={ {backgroundImage: 'url(http://192.168.0.100:8080/image/' + this.props.image + ')'} }></div>
+        <div> rating:{this.props.rating}</div>
+        <div> message: {this.props.message}</div>
       </section>
     );
   }
