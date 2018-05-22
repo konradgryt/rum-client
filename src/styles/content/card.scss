@@ -23,7 +23,7 @@
     background-position: center;
   }
 
-  &__header {;
+  &__header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +35,8 @@
     background-color: $secondary-900;
     color: $secondary-50;
     font-weight: bolder;
-
+  }
+  &:hover {
+    transform: scale(1.02);
   }
 }
