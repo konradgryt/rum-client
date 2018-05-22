@@ -10,10 +10,12 @@ class NavBar extends React.Component {
         super(props);
         this.state = {
             isPaneActive: false,
-            results: []
+            results: [],
+            arrow: <i className="material-icons">
+                arrow_forward_ios
+            </i>
         };
     }
-
 
 
     handleChange = (e) => {
@@ -27,7 +29,8 @@ class NavBar extends React.Component {
     };
 
     onClick = (item, e) => {
-        let pane = ReactDOM.findDOMNode(document.querySelector('#pane'));;
+        let pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
+        ;
         if (pane.classList.contains('close')) {
             this.props.view.tooglePane();
         }
@@ -44,9 +47,29 @@ class NavBar extends React.Component {
             reviews={item.reviews}/>, item.name);
     };
 
+    onClickOpen = (e) => {
+        this.props.view.toggleNav();
+    };
+
+    getArrow = () => {
+            let nav = ReactDOM.findDOMNode(document.querySelector('#nav'));
+            if(nav.classList.contains('close')){
+                this.setState({ arrow: <i className="material-icons">
+                    arrow_forward_ios
+                </i>});
+            } else {
+                this.setState({ arrow: <i className="material-icons">
+                    arrow_back_ios
+                </i>});
+            }
+    };
+
     render() {
         return (
             <section className='navbar'>
+                <div className="navbar__button" onClick={(e) => {this.onClickOpen(e); this.getArrow()}}>
+                    {this.state.arrow}
+                </div>
                 <div className='navbar__position-relative'>
                     <i className="material-icons">search</i>
                     <input className='navbar__navitem--search' value={this.state.inputValue}

@@ -31,7 +31,20 @@ body {
 
 #nav {
   height: 100%;
-  min-width: 300px;
+  width: 300px;
+  position: relative;
+  transition: width 100ms ease, visibility 200ms ease;
+
+  &.close {
+    transition: width 100ms ease, visibility 200ms ease;
+    width: 30px;
+    > section > div.navbar__position-relative {
+      visibility: hidden;
+    }
+    > section > div.navbar__button > i {
+      margin: auto;
+    }
+  }
 }
 
 #pane {
@@ -102,7 +115,7 @@ body {
   #content {
     width: 100%;
   }
-}   
+}
 
 .error {
   color: red;

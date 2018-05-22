@@ -28,15 +28,14 @@
   }
 
   &__new-rum {
-    background-color: $primary-800;
+    background-color: $secondary-900;
     color: $secondary-50;
     padding: 10px 20px;
     margin: auto auto auto 35px;
     font-size: 1.5rem;
     cursor: pointer;
     &:hover {
-      color: $secondary-400;
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
   }
 }
