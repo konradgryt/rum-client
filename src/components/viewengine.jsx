@@ -73,8 +73,8 @@ class ViewEngine {
             }
     }
 
-    refreshPane(content) {
-        ReactDOM.render(<PaneBody view={this} body={content} />, this.paneContainer);
+    refreshPane(content, title) {
+        ReactDOM.render(<PaneBody view={this} body={content} header={title} />, this.paneContainer);
     }
     /**
      * Renders index view of the app - all elements that are being displayed
