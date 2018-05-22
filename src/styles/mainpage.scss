@@ -11,17 +11,22 @@
     @include flex-row();
   }
 
+  input[type='submit'] {
+    width: 60px;
+    margin-right: 20px;
+    font-size: 0.9rem;
+    background-color: #c24d03;
+    border: none;
+    color: #FFFFFF;
+  }
+
   &__input {
     margin-left: 5px;
 
-    &--label {
-      font-size: 1rem;
-    }
-
     &--textfield {
-      margin-left: 10px;
       margin-right: 10px;
-      padding: 2px;
+      padding: 5px;
+      border: none;
     }
   }
 }
