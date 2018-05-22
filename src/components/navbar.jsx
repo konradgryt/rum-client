@@ -10,11 +10,8 @@ class NavBar extends React.Component {
   render() {
     return (
         <section className='navbar'>
-            <div className='navbar__navitem'>1</div>
-            <div className='navbar__navitem'>2</div>
-            <div className='navbar__navitem'>3</div>
-            <div className='navbar__navitem'>4</div>
-            <div className='navbar__navitem'>5</div>
+            <input className='navbar__navitem--search' placeholder='Search...'/>
+            <div className='navbar__navitem'>Filtering</div>
         </section>
     );
   }
