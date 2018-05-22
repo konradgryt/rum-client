@@ -12,10 +12,12 @@
   }
   &__description {
     padding: 20px;
+    margin-top: 20px;
     color: #FFF;
     div {
       @include flex-row();
       justify-content: flex-end;
+      margin-top: 10px;
     }
 
     &--left-alignment {

@@ -4,7 +4,7 @@
   background-color: transparent;
   margin-left: 5px;
   margin-right: 10px;
-  padding: 5px;
+  padding: 5px 5px 0 5px;
   font-size: 1rem;
   color: $secondary-50;
   border: none;
@@ -19,4 +19,36 @@
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px $secondary-50 inset;
   }
+}
+
+@mixin primary() {
+  margin: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: $secondary-600;
+  border: none;
+  border-radius: 2px;
+  color: $secondary-50;
+  padding: 5px 15px;
+}
+
+@mixin primary-outline() {
+  margin: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 2px;
+  border: $secondary-600 solid 1px;
+  color: $secondary-50;
+  padding: 5px 15px;
+}
+
+@mixin secondary-blank() {
+  margin: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: $secondary-50;
+  padding: 5px 15px;
+  background-color: transparent;
+  border: none;
 }
