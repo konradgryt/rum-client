@@ -3,51 +3,54 @@ import ReactDOM from 'react-dom';
 import Register from './register';
 import NavBar from './navbar';
 import Login from './login';
-import Rum from './rum';
+import CardList from './cardlist';
 
 class ViewEngine {
-    viewContainer;
+    contentContainer;
     navContainer;
+    headerContainer;
 
-    constructor(navContainer, viewContainer) {
+    constructor(contentContainer, navContainer, headerContainer) {
+        this.contentContainer = contentContainer;
         this.navContainer = navContainer;
-        this.viewContainer = viewContainer;
+        this.headerContainer = headerContainer;
     }
 
     /**
      * Renders navigation container of the web app
      */
-    renderNavContainer() {
-        ReactDOM.render(<NavBar />, this.navContainer);
+    renderNav() {
+        ReactDOM.render(<NavBar view={this} />, this.navContainer);
     }
 
     /**
      * Renders register container of the web app
      */
     renderRegister() {
-        ReactDOM.render(<Register view={this} />, this.viewContainer);
+        ReactDOM.render(<Register view={this} />, this.headerContainer);
     }
 
     /**
      * Renders login container of the web app
      */
     renderLogin() {
-        ReactDOM.render(<Login />, this.viewContainer);
+        ReactDOM.render(<Login view={this} />, this.headerContainer);
     }
 
     /**
      * Renders rum container of the web app
      */
-    renderRum() {
-        ReactDOM.render(<Rum />, this.viewContainer);
+    renderCardList() {
+        ReactDOM.render(<CardList view={this} />, this.contentContainer);
     }
 
     /**
      * Renders index view of the app - all elements that are being displayed
      */
     renderIndex() {
-         this.renderNavContainer();
+         this.renderNav();
          this.renderRegister();
+         this.renderCardList();
     }
 }
 

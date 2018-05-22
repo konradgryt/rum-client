@@ -1,10 +1,10 @@
 import ViewEngine from './components/viewengine';
 import './styles/global.scss';
 
-var viewContainer = document.querySelector('#main');
+var contentContainer = document.querySelector('#content');
 var navContainer = document.querySelector('#nav');
-var rumContainer = document.querySelector('#rum');
+var headerContainer = document.querySelector('#header');
 
-var view = new ViewEngine(navContainer,viewContainer,rumContainer);
+var view = new ViewEngine(contentContainer,navContainer,headerContainer);
 
 view.renderIndex();
