@@ -67,16 +67,18 @@ class ViewEngine {
         ReactDOM.render(<ReviewWindow view={this} />, document.querySelector('#popup'));
     }
 
-    tooglePane() {
+    tooglePane(checkReviews) {
         var pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
             if (pane.classList.contains('close')) {
                 pane.classList.remove('close');
                 pane.classList.add('open');
                 Utility.saveToLocalStorage('taskpaneActive', 'true');
-                if (Utility.getFromLocalStorage('allowReviews') === 'true') {
-                    this.toogleReviews();
-                } else {
-                    this.turnOffReviews();
+                if (checkReviews) {
+                    if (Utility.getFromLocalStorage('allowReviews') === 'true') {
+                        this.toogleReviews();
+                    } else {
+                        this.turnOffReviews();
+                    }
                 }
             } else if (pane.classList.contains('open')) {
                 pane.classList.remove('open');

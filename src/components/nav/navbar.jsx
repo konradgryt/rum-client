@@ -14,8 +14,6 @@ class NavBar extends React.Component {
         };
     }
 
-
-
     handleChange = (e) => {
         if (e.target.value.toString().trim().length < 2) {
             this.setState({results: []});

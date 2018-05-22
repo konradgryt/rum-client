@@ -50,7 +50,7 @@ class Login extends React.Component {
     handleClick(event) {
         var pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
         if (pane.classList.contains('close')) {
-            this.props.view.tooglePane();
+            this.props.view.tooglePane(false);
         }
         this.props.view.refreshPane(<Rum view={this.props.view}/>, 'Add rum');
     }
