@@ -28,7 +28,7 @@ class RumPane extends React.Component {
                         rating={item.rating}
                         additionalInfo={item.additionalInfo}
                     />)}</div>
-                     <div id='makereview' onClick={() => {console.log('review in progress')}}><span className="rum-pane__description--left-alignment">Review
+                     <div id='makereview' onClick={() => {this.props.view.renderReviewWindow()}}><span className="rum-pane__description--left-alignment">Review
                     </span></div>
                 </div>
             </div>

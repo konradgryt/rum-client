@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Utility from './utility';
 //content
 import CardList from './content/cardlist';
+import ReviewWindow from './content/reviewwindow';
 //import Card from './content/card';
 //header
 import Login from './header/login';
@@ -60,6 +61,10 @@ class ViewEngine {
      */
     renderCardList() {
         ReactDOM.render(<CardList view={this} />, this.contentContainer);
+    }
+
+    renderReviewWindow() {
+        ReactDOM.render(<ReviewWindow view={this} />, document.querySelector('#popup'));
     }
 
     tooglePane() {
