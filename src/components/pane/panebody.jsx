@@ -1,20 +1,21 @@
 import React from 'react';
 import PaneHeader from './paneheader';
-import Rum from './rum';
-//import Utility from '../logic/utility';
+// import Rum from './rum';
+// import Card from '../content/card';
+// import Utility from '../utility';
 
 class PaneBody extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {}
   }
 
   render() {
     return (
       <section className={this.state.class}> 
           <PaneHeader view={this.props.view} />
-          <Rum view={this.props.view}/>
+          {this.props.body}
       </section>
     );
   }

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 //import Utility from './utility';
 //content
 import CardList from './content/cardlist';
+//import Card from './content/card';
 //header
 import Login from './header/login';
 import Register from './header/register';
@@ -11,6 +12,7 @@ import Overview from './header/overview';
 import NavBar from './nav/navbar';
 //pane
 import PaneBody from './pane/panebody';
+//import Rum from './pane/rum';
 
 class ViewEngine {
     contentContainer;
@@ -63,7 +65,7 @@ class ViewEngine {
     renderPane() {
         ReactDOM.findDOMNode(document.querySelector('#pane')).classList.remove('close');
         ReactDOM.findDOMNode(document.querySelector('#pane')).classList.add('open');
-       // ReactDOM.render(<PaneBody view={this} />, this.paneContainer);
+        //ReactDOM.render(<PaneBody view={this} />, this.paneContainer);
     }
 
     unmountPane() {
@@ -71,7 +73,9 @@ class ViewEngine {
         ReactDOM.findDOMNode(document.querySelector('#pane')).classList.remove('open');
         ReactDOM.findDOMNode(document.querySelector('#pane')).classList.add('close');
     }
-
+    refreshPane(content) {
+        ReactDOM.render(<PaneBody view={this} body={content} />, this.paneContainer);
+    }
     /**
      * Renders index view of the app - all elements that are being displayed
      */
@@ -79,7 +83,7 @@ class ViewEngine {
         this.renderNav();
         this.renderLogin();
         this.renderCardList();
-        ReactDOM.render(<PaneBody view={this} />, this.paneContainer);
+        this.refreshPane();
     }
 }
 

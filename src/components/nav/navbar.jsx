@@ -1,4 +1,6 @@
 import React from 'react';
+import Utility from '../utility';
+import Rum from '../pane/rum';
 
 class NavBar extends React.Component {
 
@@ -16,6 +18,8 @@ class NavBar extends React.Component {
       this.setState({
         isPaneActive: true
       })
+      this.props.view.refreshPane(<Rum view={this.props.view}/>);
+      Utility.saveToLocalStorage('currentbody', 'Rum');
       this.props.view.renderPane();
     } else {
         this.setState({

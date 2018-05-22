@@ -31,6 +31,7 @@ class CardList extends React.Component {
       <section className='cardlist'>
          {this.state.list.map(items =>
            <Card 
+                 view={this.props.view}
                  key={items.name}
                  name={items.name}
                  image={items.image}

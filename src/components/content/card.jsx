@@ -1,6 +1,6 @@
 import React from 'react';
 //import ReviewList from './reviewlist';
-//import Utility from '../logic/utility';
+import Utility from '../utility';
 import Review from './review';
 
 class Card extends React.Component {
@@ -10,9 +10,24 @@ class Card extends React.Component {
         this.state = {};
     }
 
+    focusCard() {
+        Utility.saveToLocalStorage('currentbody', 'Card');
+        this.props.view.refreshPane(<Card 
+            view={this.props.view}
+            key={this.props.name}
+            name={this.props.name}
+            image={this.props.image}
+            percentage={this.props.percentage}
+            yearOfBrew={this.props.yearOfBrew}
+            producer={this.props.producer}
+            typeOfRum={this.props.typeOfRum}
+            kettleType={this.props.kettleType}
+            reviews={this.props.reviews} />);
+    }
+
     render() {
         return (
-            <section className='card'>
+            <section className='card' onClick={this.focusCard.bind(this)}>
                 <img src={'http://192.168.0.100:8080/image/' + this.props.image} alt=''/>
                 <div className='card__description'>
                     <div><span className='card__description--left-alignment'>Name:</span>{this.props.name}</div>
@@ -22,14 +37,14 @@ class Card extends React.Component {
                     <div><span className='card__description--left-alignment'>Type of rum:</span>{this.props.typeOfRum}</div>
                     <div><span className='card__description--left-alignment'>Kettle type:</span>{this.props.kettleType}</div>
                     <div><span className='card__description--left-alignment'>Reviews:</span>
-                        {this.props.reviews.map(items =>
+                         {this.props.reviews.map(items =>
                             <Review
                                 image={items.image}
                                 rumId={items.rumId}
                                 userId={items.userId}
                                 rating={items.userId}
                                 additionalInfo={items.additionalInfo}
-                            />)}
+                            />)} 
                     </div>
                 </div>
             </section>
