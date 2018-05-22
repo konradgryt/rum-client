@@ -14,19 +14,8 @@ class NavBar extends React.Component {
   }
 
   handleClick(event) {
-    if (!this.state.isPaneActive) {
-      this.setState({
-        isPaneActive: true
-      })
       this.props.view.refreshPane(<Rum view={this.props.view}/>);
-      Utility.saveToLocalStorage('currentbody', 'Rum');
-      this.props.view.renderPane();
-    } else {
-        this.setState({
-        isPaneActive: false
-      })      
-      this.props.view.unmountPane();
-    }
+      this.props.view.tooglePane();
   }
 
   render() {

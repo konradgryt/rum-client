@@ -62,17 +62,17 @@ class ViewEngine {
         ReactDOM.render(<CardList view={this} />, this.contentContainer);
     }
 
-    renderPane() {
-        ReactDOM.findDOMNode(document.querySelector('#pane')).classList.remove('close');
-        ReactDOM.findDOMNode(document.querySelector('#pane')).classList.add('open');
-        //ReactDOM.render(<PaneBody view={this} />, this.paneContainer);
+    tooglePane() {
+        var pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
+            if (pane.classList.contains('close')) {
+                pane.classList.remove('close');
+                pane.classList.add('open');
+            } else if (pane.classList.contains('open')) {
+                pane.classList.remove('open');
+                pane.classList.add('close');
+            }
     }
 
-    unmountPane() {
-     // ReactDOM.unmountComponentAtNode(document.querySelector('#pane'));
-        ReactDOM.findDOMNode(document.querySelector('#pane')).classList.remove('open');
-        ReactDOM.findDOMNode(document.querySelector('#pane')).classList.add('close');
-    }
     refreshPane(content) {
         ReactDOM.render(<PaneBody view={this} body={content} />, this.paneContainer);
     }

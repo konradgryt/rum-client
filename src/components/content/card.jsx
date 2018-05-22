@@ -1,6 +1,6 @@
 import React from 'react';
 //import ReviewList from './reviewlist';
-import Utility from '../utility';
+//import Utility from '../utility';
 import Review from './review';
 
 class Card extends React.Component {
@@ -11,7 +11,7 @@ class Card extends React.Component {
     }
 
     focusCard() {
-        Utility.saveToLocalStorage('currentbody', 'Card');
+        this.props.view.tooglePane();
         this.props.view.refreshPane(<Card 
             view={this.props.view}
             key={this.props.name}

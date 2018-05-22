@@ -12,7 +12,7 @@ class PaneHeader extends React.Component {
   render() {
     return (
         <div className='panebody__header'>
-            <i className="material-icons" onClick={() => { this.props.view.unmountPane()}} >close</i>
+            <i className="material-icons" onClick={() => { this.props.view.tooglePane()}} >close</i>
             Add rum
         </div>
     );
