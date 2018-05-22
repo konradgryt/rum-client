@@ -44,6 +44,8 @@ class Rum extends React.Component {
                     this.setState({
                         message: this.SuccessMessage
                     });
+                    this.props.view.renderCardList();
+                    this.forceUpdate();
                 } else {
                     this.setState({
                         message: this.ErrorMessage
@@ -51,6 +53,10 @@ class Rum extends React.Component {
                 }
             });
         event.preventDefault();
+    }
+
+    addImage() {
+        document.getElementById('image-location').click();
     }
 
     SuccessMessage = (
@@ -95,12 +101,8 @@ class Rum extends React.Component {
                                    placeholder='Kettle type'/>
                         </label>
                         <label>Image of rum
-                            <input hidden id='image-location' type='file' accept='image/*'
-                                   onChange={this.handleImageChange}/>
-                            <button onClick={() => document.getElementById('image-location').click()}>Select an image
-                            </button>
+                            <input type='file' accept='image/*' onChange={(e) => this.handleImageChange(e)}/>
                         </label>
-
                         <input type='submit' value='Create rum'/>
                     </div>
                     <div className='mainpage__input'>

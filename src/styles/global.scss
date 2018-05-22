@@ -107,3 +107,11 @@ body {
   color: red;
   font-weight: 900;
 }
+
+.hide {
+  visibility: collapse;
+}
+
+.show {
+  visibility: visible;
+}

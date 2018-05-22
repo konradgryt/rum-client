@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Utility from './utility';
+import Utility from './utility';
 //content
 import CardList from './content/cardlist';
+import ReviewWindow from './content/reviewwindow';
 //import Card from './content/card';
 //header
 import Login from './header/login';
@@ -12,7 +13,7 @@ import Overview from './header/overview';
 import NavBar from './nav/navbar';
 //pane
 import PaneBody from './pane/panebody';
-//import Rum from './pane/rum';
+//import RumPane from './pane/rum';
 
 class ViewEngine {
     contentContainer;
@@ -62,6 +63,10 @@ class ViewEngine {
         ReactDOM.render(<CardList view={this} />, this.contentContainer);
     }
 
+    renderReviewWindow() {
+        ReactDOM.render(<ReviewWindow view={this} />, document.querySelector('#popup'));
+    }
+
     tooglePane() {
         var pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
             if (pane.classList.contains('close')) {
@@ -70,6 +75,17 @@ class ViewEngine {
             } else if (pane.classList.contains('open')) {
                 pane.classList.remove('open');
                 pane.classList.add('close');
+            }
+    }
+
+    toogleReviews() {
+        var pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
+            if (pane.classList.contains('show')) {
+                pane.classList.remove('show');
+                pane.classList.add('hide');
+            } else if (pane.classList.contains('hide')) {
+                pane.classList.remove('hide');
+                pane.classList.add('show');
             }
     }
 
@@ -83,7 +99,7 @@ class ViewEngine {
         this.renderNav();
         this.renderLogin();
         this.renderCardList();
-        this.refreshPane();
+        Utility.saveToLocalStorage('allowReviews', 'false');
     }
 }
 
