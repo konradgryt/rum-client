@@ -1,0 +1,10 @@
+
+.card {
+    @include flex-row();
+    align-items: center;
+    padding : 1vw;
+
+    &__description {
+          @include flex-column();
+    }
+}
