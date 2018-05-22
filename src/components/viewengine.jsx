@@ -12,7 +12,7 @@ import Overview from './header/overview';
 import NavBar from './nav/navbar';
 //pane
 import PaneBody from './pane/panebody';
-import RumPane from './pane/rum';
+//import RumPane from './pane/rum';
 
 class ViewEngine {
     contentContainer;

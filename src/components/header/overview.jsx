@@ -1,5 +1,5 @@
 import React from 'react';
-import RumPane from '../pane/rum';
+//import RumPane from '../pane/rum';
 import Utility from '../utility';
 
 class Overview extends React.Component {
@@ -11,11 +11,15 @@ class Overview extends React.Component {
   componentDidMount() {
     Utility.saveToLocalStorage('allowReviews', 'true');
   }
+  logout() {
+    Utility.saveToLocalStorage('allowReviews', 'false');
+    this.props.view.renderLogin();
+  }
   render() {
     return (
       <section className='overview'>
         Logged in as {this.props.username}
-        <input type='button' value='Logout' onClick={() => Utility.saveToLocalStorage('allowReviews', 'false')}/>
+        <input type='button' value='Logout' onClick={() => this.logout()}/>
       </section>
     );
   }
