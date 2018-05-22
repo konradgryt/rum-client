@@ -1,26 +1,10 @@
-@import '../flex.scss';
+@import 'flex.scss';
 
 .rum {
-  @include flex-column();
   background-color: #242424;
   color: #FFF;
   height: 100%;
   width: 100%;
   border-left: #1E1E1E solid 1px;
   font-size: 40px;
-  box-sizing: border-box;
-  padding: 20px;
-
-  form {
-    @include flex-column();
-    div {
-      @include flex-column();
-      margin-top: 20px;
-      input, button {
-        margin-top: 20px;
-        border: none;
-        padding: 10px;
-      }
-    }
-  }
 }

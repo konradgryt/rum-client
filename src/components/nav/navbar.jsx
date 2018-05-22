@@ -5,8 +5,7 @@ class NavBar extends React.Component {
  constructor(props) {
     super(props);
     this.state = {
-      isPaneActive: false,
-      buttonValue: 'Open pane'
+      isPaneActive: false
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -15,14 +14,12 @@ class NavBar extends React.Component {
   handleClick(event) {
     if (!this.state.isPaneActive) {
       this.setState({
-        isPaneActive: true,
-        buttonValue: 'Close pane'
+        isPaneActive: true
       })
       this.props.view.renderPane();
     } else {
         this.setState({
-        isPaneActive: false,
-        buttonValue: 'Open pane'
+        isPaneActive: false
       })      
       this.props.view.unmountPane();
     }
@@ -36,7 +33,9 @@ class NavBar extends React.Component {
                 <input className='navbar__navitem--search'/>
             </div>
             <div className='navbar__navitem'>Filtering</div>
-            <input className='navbar__button' value={this.state.buttonValue} type='button' onClick={this.handleClick} />
+            <ul>
+                <li className='navbar__button' value='' type='button' onClick={this.handleClick}>Add new rum</li>
+            </ul>
         </section>
     );
   }

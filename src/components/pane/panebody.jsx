@@ -10,14 +10,6 @@ class PaneBody extends React.Component {
     this.state = {};
   }
 
-  addclassOpen() {
-    ReactDOM.findDOMNode(document.querySelector('#pane')).classList.add('open');
-  }
-
-  addclassClose() {
-    ReactDOM.findDOMNode(document.querySelector('#pane')).classList.add('close');
-  }
-
   render() {
     return (
       <section className={this.state.class}> 
