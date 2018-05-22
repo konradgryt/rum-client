@@ -26,6 +26,7 @@ class Overview extends React.Component {
       <section className='overview'>
         Logged in as {this.props.username}
         <input type='button' value='Logout' onClick={() => this.logout()}/>
+        <div className='login__new-rum' onClick={this.handleClick}>Add new rum</div>
       </section>
     );
   }

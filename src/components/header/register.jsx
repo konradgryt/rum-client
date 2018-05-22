@@ -76,6 +76,7 @@ export class Register extends React.Component {
                     </div>
                     <input type='button' value='Sign In' onClick={() => {this.props.view.renderLogin()}}/>
                 </form>
+                <div className='login__new-rum' onClick={this.handleClick}>Add new rum</div>
             </section>
         );
     }
