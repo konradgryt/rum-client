@@ -9,10 +9,9 @@ class ViewEngine {
     viewContainer;
     navContainer;
 
-    constructor(navContainer, viewContainer,rumContainer) {
+    constructor(navContainer, viewContainer) {
         this.navContainer = navContainer;
         this.viewContainer = viewContainer;
-        this.rumContainer = rumContainer;
     }
 
     /**
@@ -40,7 +39,7 @@ class ViewEngine {
      * Renders rum container of the web app
      */
     renderRum() {
-        ReactDOM.render(<Rum />, this.rumContainer);
+        ReactDOM.render(<Rum />, this.viewContainer);
     }
 
     /**
@@ -49,7 +48,6 @@ class ViewEngine {
     renderIndex() {
          this.renderNavContainer();
          this.renderRegister();
-         this.renderRum();
     }
 }
 
