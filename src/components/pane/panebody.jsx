@@ -12,6 +12,7 @@ class PaneBody extends React.Component {
   render() {
     return (
       <section className='panebody'>
+          <i className="material-icons">close</i>
           <Rum />
       </section>
     );

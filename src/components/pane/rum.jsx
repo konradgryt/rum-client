@@ -85,8 +85,8 @@ class Rum extends React.Component {
                                placeholder='Kettle type'/>
                         <input hidden id='image-location' type='file' accept='image/*'
                                onChange={this.handleImageChange}/>
-                        <button onClick={() => document.getElementById('image-location').click()}>...</button>
-                        <input type='submit' value='ok'/>
+                        <button onClick={() => document.getElementById('image-location').click()}>Select an image</button>
+                        <input type='submit' value='Create rum'/>
                     </div>
                     <div className='mainpage__input'>
                         {this.state.message}

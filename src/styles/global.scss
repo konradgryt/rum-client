@@ -4,6 +4,7 @@
 @import './header/login.scss';
 @import './pane/rum.scss';
 @import './content/card.scss';
+@import './content/cardlist.scss';
 
 * {
   margin: 0;
@@ -26,13 +27,24 @@ body {
 
 #nav {
   height: 100%;
-  width: 20vw;
+  width: 15vw;
 }
 
 #pane {
-  @include flex-row();
+  @include flex-column();
   height: 100%;
   width: 20vw;
+}
+
+.panebody {
+  position: relative;
+  height: 100%;
+  i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #464646;
+  }
 }
 
 #header {
