@@ -52,9 +52,9 @@ class Login extends React.Component {
                         {this.state.message}
                     </div>
                     <input type='submit' value='Login'/>
+                    <input type='button' value='Sign Up' onClick={() => {this.props.view.renderRegister()}}/>
                     <input type='text' id='username' onChange={this.handleUsernameChange} placeholder='Username'/>
                     <input type='password' onChange={this.handlePasswordChange} placeholder='Password'/>
-                    <input type='button' value='Sign Up' onClick={() => {this.props.view.renderRegister()}}/>
                 </form>
             </section>
         );

@@ -1,0 +1,22 @@
+@import "color";
+
+@mixin input() {
+  background-color: transparent;
+  margin-left: 5px;
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 1rem;
+  color: $secondary-50;
+  border: none;
+  border-bottom: $secondary-400 solid 2px;
+  &:focus, * {
+    outline: none;
+    border-bottom: $secondary-200 solid 2px;
+  }
+  &::placeholder {
+    color: $secondary-400;
+  }
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px $secondary-50 inset;
+  }
+}

@@ -7,6 +7,7 @@
 @import './content/cardlist.scss';
 @import './header/overview.scss';
 @import './pane/rumpane.scss';
+@import 'color.scss';
 
 * {
   margin: 0;
@@ -19,7 +20,7 @@ body {
   width: 100%;
   height: 100%;
   @include flex-row();
-  background-color: #323232;
+  background-color: $primary-500;
   overflow: hidden;
 }
 
@@ -35,18 +36,20 @@ body {
 
 #pane {
   @include flex-column();
-  background-color: #242424;
+  background-color: $primary-700;
   height: 100%;
-  width: 350px;
-  position: absolute;
+  width: 400px;
+  position: relative;
   transition: right 100ms ease;
+  right: -350px;
+  display: block;
   section {
     @include flex-column();
     height: 100%;
   }
   &.close {
-    transition: right 100ms ease-out;
-    right: -350px;
+    transition: right 200ms ease-out, width 100ms linear;
+    width: 0;
   }
   &.open {
     right: 0;
@@ -60,9 +63,7 @@ body {
     height: 50px;
     @include flex-column();
     position: relative;
-    background-color: #272727;
-    border-left: #1E1E1E solid 1px;
-    border-bottom: #1E1E1E solid 1px;
+    background-color: $primary-700;
     justify-content: center;
     padding-left: 20px;
     color: #FFFFFF;
@@ -71,20 +72,19 @@ body {
       position: absolute;
       right: 10px;
       top: 12px;
-      color: #464646;
+      color: $secondary-50;
       &:hover {
         cursor: pointer;
-        color: #5A5A5A;
+        transform: scale(1.15);
       }
     }
   }
 }
 
 #header {
-  height: 40px;
+  height: 60px;
   width: 100%;
-  background-color: #2D2D2D;
-  border-bottom: #1E1E1E solid 1px;
+  background-color: $primary-600;
 }
 
 #wrapper {
@@ -98,6 +98,9 @@ body {
   width: 100%;
   @include flex-row();
   justify-content: space-between;
+  #content {
+    width: 100%;
+  }
 }   
 
 .error {

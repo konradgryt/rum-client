@@ -1,22 +1,23 @@
 @import '../flex.scss';
+@import '../color';
 
 .navbar {
   @include flex-column();
-  background-color: #242424;
+  background-color: $primary-700;
   color: #FFF;
   height: 100%;
-  border-right: #1E1E1E solid 1px;
   font-size: 40px;
 
   &__position-relative {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 70px;
     @include flex-column();
     justify-content: center;
     position: relative;
     i {
       position: absolute;
-      margin-left: 15px;
+      margin-left: 20px;
+      top: 9px;
       color: gray;
     }
   }
@@ -35,6 +36,9 @@
       padding: 10px 10px 10px 40px;
       border: none;
       align-self: center;
+      &:focus {
+        outline: none;
+      }
     }
   }
 
@@ -44,12 +48,33 @@
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-top: #464646 solid 1px;
-    border-bottom: #464646 solid 1px;
 
     &:hover {
       color: #FB6304;
-      background-color: #323232;
+      text-decoration: underline;
     }
+  }
+
+  &__results {
+    width: 92%;
+    padding: 10px 10px 10px 40px;
+    font-size: 1.05rem;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    align-self: center;
+    &:hover {
+      background-color: #5A5A5A;
+      color: #FFF;
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  ul {
+    margin-top: auto;
+    margin-bottom: 20px;
   }
 }
