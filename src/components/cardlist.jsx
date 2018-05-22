@@ -1,6 +1,6 @@
 import React from 'react';
 import Utility from '../logic/utility';
-import Rum from './rum';
+import Card from './card';
 
 class CardList extends React.Component {
 
@@ -22,7 +22,7 @@ class CardList extends React.Component {
     return (
       <section>
          {this.state.list.map(items =>
-           <Rum name={items.name}
+           <Card name={items.name}
                  image={items.image}
                  percentage={items.percentage}
                  yearOfBrew={items.yearOfBrew}
