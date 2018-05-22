@@ -71,21 +71,37 @@ class Rum extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <h1>Add rum</h1>
                     <div>
-                        <input id='name' type='text' onChange={(e) => this.handleKeyChange('name', e)}
-                               placeholder='Name of rum'/>
-                        <input id='percentage' type='text' onChange={(e) => this.handleKeyChange('percentage', e)}
-                               placeholder='Percentage'/>
-                        <input id='yearOfBrew' type='text' onChange={(e) => this.handleKeyChange('yearOfBrew', e)}
-                               placeholder='Year of brew'/>
-                        <input id='producer' type='text' onChange={(e) => this.handleKeyChange('producer', e)}
-                               placeholder='Producer'/>
-                        <input id='typeOfRum' type='text' onChange={(e) => this.handleKeyChange('typeOfRum', e)}
-                               placeholder='Type of rum'/>
-                        <input id='kettleType' type='text' onChange={(e) => this.handleKeyChange('kettleType', e)}
-                               placeholder='Kettle type'/>
-                        <input hidden id='image-location' type='file' accept='image/*'
-                               onChange={this.handleImageChange}/>
-                        <button onClick={() => document.getElementById('image-location').click()}>Select an image</button>
+                        <label>Name
+                            <input id='name' type='text' onChange={(e) => this.handleKeyChange('name', e)}
+                                   placeholder='Name of rum'/>
+                        </label>
+                        <label>Percentage
+                            <input id='percentage' type='text' onChange={(e) => this.handleKeyChange('percentage', e)}
+                                   placeholder='Percentage'/>
+                        </label>
+                        <label>Year of brew
+                            <input id='yearOfBrew' type='text' onChange={(e) => this.handleKeyChange('yearOfBrew', e)}
+                                   placeholder='Year of brew'/>
+                        </label>
+                        <label>Producer
+                            <input id='producer' type='text' onChange={(e) => this.handleKeyChange('producer', e)}
+                                   placeholder='Producer'/>
+                        </label>
+                        <label>Type of rum
+                            <input id='typeOfRum' type='text' onChange={(e) => this.handleKeyChange('typeOfRum', e)}
+                                   placeholder='Type of rum'/>
+                        </label>
+                        <label>Kettle type
+                            <input id='kettleType' type='text' onChange={(e) => this.handleKeyChange('kettleType', e)}
+                                   placeholder='Kettle type'/>
+                        </label>
+                        <label>Image of rum
+                            <input hidden id='image-location' type='file' accept='image/*'
+                                   onChange={this.handleImageChange}/>
+                            <button onClick={() => document.getElementById('image-location').click()}>Select an image
+                            </button>
+                        </label>
+
                         <input type='submit' value='Create rum'/>
                     </div>
                     <div className='mainpage__input'>

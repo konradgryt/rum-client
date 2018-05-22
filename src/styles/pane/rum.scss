@@ -14,12 +14,20 @@
   form {
     @include flex-column();
     div {
-      @include flex-column();
-      margin-top: 20px;
-      input, button {
+      label{
+        @include flex-row();
+        font-size: 1rem;
+        align-items: center;
         margin-top: 20px;
-        border: none;
-        padding: 10px;
+        input, button {
+          margin-left: auto;
+          margin-right: 0;
+          width: 150px;
+        }
+        input, button {
+          border: none;
+          padding: 7px;
+        }
       }
     }
   }
