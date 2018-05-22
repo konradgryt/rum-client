@@ -11,6 +11,10 @@ class ReviewWindow extends React.Component {
   // {this.props.rumId} 
   // {this.props.userId}
 
+    handleKeyChange(key, event) {
+        this.setState({[key]: event.target.value});
+    }
+
   render() {
     return (
       <section className='reviewwindow'>
