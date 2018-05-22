@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 //import ReviewList from './reviewlist';
 //import Utility from '../utility';
 import Review from './review';
@@ -11,7 +12,10 @@ class Card extends React.Component {
     }
 
     focusCard() {
-        this.props.view.tooglePane();
+        var pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
+        if (pane.classList.contains('close')) {
+            this.props.view.tooglePane();
+        }
         this.props.view.refreshPane(<Card 
             view={this.props.view}
             key={this.props.name}

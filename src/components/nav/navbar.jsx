@@ -1,6 +1,7 @@
 import React from 'react';
 import Utility from '../utility';
 import Rum from '../pane/rum';
+import ReactDOM from 'react-dom';
 
 class NavBar extends React.Component {
 
@@ -14,8 +15,11 @@ class NavBar extends React.Component {
   }
 
   handleClick(event) {
+        var pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
+        if (pane.classList.contains('close')) {
+            this.props.view.tooglePane();
+        }
       this.props.view.refreshPane(<Rum view={this.props.view}/>);
-      this.props.view.tooglePane();
   }
 
   render() {
