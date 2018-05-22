@@ -14,7 +14,7 @@ class PaneBody extends React.Component {
   render() {
     return (
       <section className={this.state.class}> 
-          <PaneHeader view={this.props.view} />
+          <PaneHeader view={this.props.view} header={this.props.header}/>
           {this.props.body}
       </section>
     );

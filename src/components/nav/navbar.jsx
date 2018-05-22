@@ -19,7 +19,7 @@ class NavBar extends React.Component {
         if (pane.classList.contains('close')) {
             this.props.view.tooglePane();
         }
-      this.props.view.refreshPane(<Rum view={this.props.view}/>);
+      this.props.view.refreshPane(<Rum view={this.props.view}/>, 'Add rum');
   }
 
   render() {

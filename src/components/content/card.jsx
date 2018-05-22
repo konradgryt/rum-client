@@ -27,7 +27,7 @@ class Card extends React.Component {
             producer={this.props.producer}
             typeOfRum={this.props.typeOfRum}
             kettleType={this.props.kettleType}
-            reviews={this.props.reviews} />);
+            reviews={this.props.reviews} />, this.props.name);
     }
 
     render() {
