@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Utility from './utility';
+import Utility from './utility';
 //content
 import CardList from './content/cardlist';
 //import Card from './content/card';
@@ -12,7 +12,7 @@ import Overview from './header/overview';
 import NavBar from './nav/navbar';
 //pane
 import PaneBody from './pane/panebody';
-//import Rum from './pane/rum';
+import RumPane from './pane/rum';
 
 class ViewEngine {
     contentContainer;
@@ -73,6 +73,17 @@ class ViewEngine {
             }
     }
 
+    toogleReviews() {
+        var pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
+            if (pane.classList.contains('show')) {
+                pane.classList.remove('show');
+                pane.classList.add('hide');
+            } else if (pane.classList.contains('hide')) {
+                pane.classList.remove('hide');
+                pane.classList.add('show');
+            }
+    }
+
     refreshPane(content, title) {
         ReactDOM.render(<PaneBody view={this} body={content} header={title} />, this.paneContainer);
     }
@@ -83,7 +94,7 @@ class ViewEngine {
         this.renderNav();
         this.renderLogin();
         this.renderCardList();
-        this.refreshPane();
+        Utility.saveToLocalStorage('allowReviews', 'false');
     }
 }
 
