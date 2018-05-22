@@ -25,3 +25,16 @@ body {
   height: 100%;
   width: 20vw;
 }
+
+#header {
+  height: 50px;
+  width: 100%;
+  background-color: #2D2D2D;
+  border-bottom: #1E1E1E solid 1px;
+}
+
+#wrapper {
+  height: 100%;
+  width: 100%;
+  @include flex-column();
+}
