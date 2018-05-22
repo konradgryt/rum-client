@@ -5,6 +5,7 @@
 @import './pane/rum.scss';
 @import './content/card.scss';
 @import './content/cardlist.scss';
+@import './header/overview.scss';
 
 * {
   margin: 0;
@@ -18,6 +19,7 @@ body {
   height: 100%;
   @include flex-row();
   background-color: #323232;
+  overflow: hidden;
 }
 
 #main {
@@ -27,13 +29,27 @@ body {
 
 #nav {
   height: 100%;
-  width: 15vw;
+  min-width: 300px;
 }
 
 #pane {
   @include flex-column();
+  background-color: #323232;
   height: 100%;
-  width: 20vw;
+  width: 350px;
+  position: absolute;
+  transition: right 100ms ease;
+  section {
+    @include flex-column();
+    height: 100%;
+  }
+  &.close {
+    transition: right 100ms ease-out;
+    right: -350px;
+  }
+  &.open {
+    right: 0;
+  }
 }
 
 .panebody {
@@ -41,15 +57,24 @@ body {
   height: 100%;
   &__header {
     height: 50px;
+    @include flex-column();
     position: relative;
     background-color: #272727;
     border-left: #1E1E1E solid 1px;
     border-bottom: #1E1E1E solid 1px;
+    justify-content: center;
+    padding-left: 20px;
+    color: #FFFFFF;
+    font-size: 1.1rem;
     i {
       position: absolute;
       right: 10px;
       top: 10px;
       color: #464646;
+      &:hover {
+        cursor: pointer;
+        color: #5A5A5A;
+      }
     }
   }
 }
@@ -71,7 +96,7 @@ body {
   height: 100%;
   width: 100%;
   @include flex-row();
-  justify-content: space-between; 
+  justify-content: space-between;
 }   
 
 .error {
