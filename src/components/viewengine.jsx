@@ -61,23 +61,25 @@ class ViewEngine {
     }
 
     renderPane() {
-        ReactDOM.render(<PaneBody view={this} />, this.paneContainer);
+        ReactDOM.findDOMNode(document.querySelector('#pane')).classList.remove('close');
+        ReactDOM.findDOMNode(document.querySelector('#pane')).classList.add('open');
+       // ReactDOM.render(<PaneBody view={this} />, this.paneContainer);
     }
 
     unmountPane() {
-      ReactDOM.unmountComponentAtNode(document.querySelector('#pane'));
+     // ReactDOM.unmountComponentAtNode(document.querySelector('#pane'));
+        ReactDOM.findDOMNode(document.querySelector('#pane')).classList.remove('open');
+        ReactDOM.findDOMNode(document.querySelector('#pane')).classList.add('close');
     }
-    
+
     /**
      * Renders index view of the app - all elements that are being displayed
      */
     renderIndex() {
-         this.renderNav();
-         this.renderLogin();
-         this.renderCardList();
-         if (Utility.getFromLocalStorage('isPaneActive')) {
-             this.renderPane();
-         }
+        this.renderNav();
+        this.renderLogin();
+        this.renderCardList();
+        this.renderPane();
     }
 }
 
