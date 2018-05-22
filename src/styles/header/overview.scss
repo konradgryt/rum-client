@@ -1,0 +1,10 @@
+@import "../flex";
+
+.overview {
+  color: #FFFFFF;
+  @include flex-row();
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40px;
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import PaneHeader from './paneheader';
 import Rum from './rum';
-//import Utility from '../logic/utility';
 
 class PaneBody extends React.Component {
 
