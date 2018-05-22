@@ -21,26 +21,26 @@ class Login extends React.Component {
     }
 
     handleSubmit(event) {
-        var data = JSON.stringify({
-            username: this.state.username,
-            password: this.state.password
-        });
-        Utility.post('/user/login', data).then(json => {
-            console.log(json);
-            if (json) {
-                this.props.view.renderOverview(this.state.username);
-            } else {
-                this.setState({
-                    message: this.ErrorMessage
-                });
-            }
-        });
+            var data = JSON.stringify({
+                username: this.state.username,
+                password: this.state.password
+            });
+            Utility.post('/user/login', data).then(json => {
+                console.log(json);
+                if (json) {
+                    this.props.view.renderOverview(this.state.username);
+                } else {
+                    this.setState({
+                        message: this.ErrorMessage,
+                    });
+                }
+            });
         event.preventDefault();
     }
 
     ErrorMessage = (
         <div>
-            error
+            Username or password is incorrect
         </div>
     );
 
@@ -48,12 +48,13 @@ class Login extends React.Component {
         return (
             <section className='login'>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='submit' id='password' value='Login'/>
-                    <input type='text' id='username' onChange={this.handleUsernameChange} placeholder='Username'/>
-                    <input type='password' onChange={this.handlePasswordChange} placeholder='Password'/>
-                    <div>
+                    <div className='error'>
                         {this.state.message}
                     </div>
+                    <input type='submit' value='Login'/>
+                    <input type='text' id='username' onChange={this.handleUsernameChange} placeholder='Username'/>
+                    <input type='password' onChange={this.handlePasswordChange} placeholder='Password'/>
+                    <input type='button' value='Sign Up' onClick={() => {this.props.view.renderRegister()}}/>
                 </form>
             </section>
         );

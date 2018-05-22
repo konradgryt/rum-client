@@ -20,10 +20,6 @@ export class Register extends React.Component {
     //     });
     // }
 
-    componentWillUnmount() {
-        console.log('i need to make unmount method so it wont show error');
-    }
-
     handleNicknameChange(event) {
         this.setState({nickname: event.target.value});
     }
@@ -55,33 +51,30 @@ export class Register extends React.Component {
     }
 
     SuccessMessage = (
-        <div className='mainpage__input--message'>
+        <div className='register__input--message'>
             success!
         </div>
     );
 
     ErrorMessage = (
-        <div className='mainpage__input--message'>
+        <div className='register__input--message'>
             error!
         </div>
     );
 
     render() {
         return (
-            <section className='mainpage'>
+            <section className='register'>
                 <form onSubmit={this.handleSubmit}>
                     <input type='submit' value='OK'/>
-                    <div className='mainpage__input'>
-                        <input className='mainpage__input--textfield' id='nickname' type='text' placeholder='Username'
+                        <input className='register__input' id='nickname' type='text' placeholder='Username'
                                onChange={this.handleNicknameChange}/>
-                    </div>
-                    <div className='mainpage__input'>
-                        <input className='mainpage__input--textfield' id='password' type='password'
+                        <input className='register__input' id='password' type='password'
                                placeholder='Password' onChange={this.handlePasswordChange}/>
-                    </div>
-                    <div className='mainpage__input'>
+                    <div className='register__input'>
                         {this.state.message}
                     </div>
+                    <input type='button' value='Sign In' onClick={() => {this.props.view.renderLogin()}}/>
                 </form>
             </section>
         );

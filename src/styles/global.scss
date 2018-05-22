@@ -52,4 +52,9 @@ body {
   width: 100%;
   @include flex-row();
   justify-content: space-between; 
+}   
+
+.error {
+  color: red;
+  font-weight: 900;
 }

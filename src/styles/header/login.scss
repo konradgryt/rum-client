@@ -12,10 +12,23 @@
   }
 
   input[type='submit'] {
+    cursor: pointer;
     width: 60px;
     margin-right: 20px;
     font-size: 0.9rem;
     background-color: #c24d03;
+    border: none;
+    color: #FFFFFF;
+  }
+
+  input[type='button'] {
+    cursor: pointer;
+    width: 65px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 20px;
+    font-size: 0.9rem;
+    background-color: #2B5F2B;
     border: none;
     color: #FFFFFF;
   }

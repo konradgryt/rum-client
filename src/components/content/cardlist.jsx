@@ -16,13 +16,23 @@ class CardList extends React.Component {
           list: json
         });
       });
+    // Utility.get('/review').then(json => {
+    //   console.log(json);
+    //     this.setState({
+    //       list: json
+    //     });
+    //   });
+  //}
+
   }
 
   render() {
     return (
       <section className='cardlist'>
          {this.state.list.map(items =>
-           <Card name={items.name}
+           <Card 
+                 key={items.name}
+                 name={items.name}
                  image={items.image}
                  percentage={items.percentage}
                  yearOfBrew={items.yearOfBrew}
