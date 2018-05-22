@@ -12,17 +12,9 @@ class NavBar extends React.Component {
             isPaneActive: false,
             results: []
         };
-
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(event) {
-        var pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
-        if (pane.classList.contains('close')) {
-            this.props.view.tooglePane();
-        }
-        this.props.view.refreshPane(<Rum view={this.props.view}/>, 'Add rum');
-    }
+
 
     handleChange = (e) => {
         if (e.target.value.toString().trim().length < 2) {
@@ -66,9 +58,6 @@ class NavBar extends React.Component {
                         })
                     }
                 </div>
-                <ul>
-                    <li className='navbar__button' value='' type='button' onClick={this.handleClick}>Add new rum</li>
-                </ul>
             </section>
         );
     }

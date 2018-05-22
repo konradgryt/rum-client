@@ -7,10 +7,11 @@
   height: 100%;
   @include flex-row();
   flex-direction: row-reverse;
-  align-items: center;
+  align-items: flex-end;
 
   form {
     @include flex-row();
+    margin-bottom: 20px;
   }
 
   input[type='submit'] {
@@ -24,5 +25,18 @@
 
   input:not([type='submit']):not([type='button']) {
     @include input();
+  }
+
+  &__new-rum {
+    background-color: $primary-800;
+    color: $secondary-50;
+    padding: 10px 20px;
+    margin: auto auto auto 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    &:hover {
+      color: $secondary-400;
+      transform: scale(1.2);
+    }
   }
 }

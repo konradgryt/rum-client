@@ -1,5 +1,7 @@
 import React from 'react';
 import Utility from '../utility';
+import ReactDOM from "react-dom";
+import Rum from "../pane/rum";
 
 class Login extends React.Component {
 
@@ -10,6 +12,7 @@ class Login extends React.Component {
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleUsernameChange(event) {
@@ -44,6 +47,14 @@ class Login extends React.Component {
         </div>
     );
 
+    handleClick(event) {
+        var pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
+        if (pane.classList.contains('close')) {
+            this.props.view.tooglePane();
+        }
+        this.props.view.refreshPane(<Rum view={this.props.view}/>, 'Add rum');
+    }
+
     render() {
         return (
             <section className='login'>
@@ -58,6 +69,7 @@ class Login extends React.Component {
                     }}/>
                     <input type='submit' value='Login'/>
                 </form>
+                <div className='login__new-rum' onClick={this.handleClick}>Add new rum</div>
             </section>
         );
     }
