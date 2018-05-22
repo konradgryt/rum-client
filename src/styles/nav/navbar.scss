@@ -58,13 +58,13 @@
   &__results {
     width: 92%;
     padding: 10px 10px 10px 40px;
-    font-size: 1.05rem;
+    font-size: 1rem;
     box-sizing: border-box;
     background-color: #FFFFFF;
-    color: #1E1E1E;
+    color: $secondary-900;
     align-self: center;
     &:hover {
-      background-color: #5A5A5A;
+      background-color: $secondary-600;
       color: #FFF;
       cursor: pointer;
     }

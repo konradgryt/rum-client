@@ -1,5 +1,6 @@
 @import 'flex.scss';
 @import '../color.scss';
+@import "../mixins";
 
 .login {
   width: 100%;
@@ -13,44 +14,15 @@
   }
 
   input[type='submit'] {
-    cursor: pointer;
-    width: 70px;
-    font-size: 1rem;
-    background-color: $secondary-700;
-    border-radius: 5%;
-    border: none;
-    color: #FFFFFF;
+    @include primary();
+    margin-right: 40px;
   }
 
   input[type='button'] {
-    cursor: pointer;
-    width: 70px;
-    padding: 5px;
-    font-size: 1rem;
-    background-color: $secondary-600;
-    border-radius: 5%;
-    border: none;
-    color: #FFFFFF;
+    @include secondary-blank();
   }
 
-  input {
-    background-color: transparent;
-    margin-left: 5px;
-    margin-right: 10px;
-    padding: 5px;
-    font-size: 1rem;
-    color: $secondary-50;
-    border: none;
-    border-bottom: $secondary-400 solid 2px;
-    &:focus, * {
-      outline: none;
-      border-bottom: $secondary-200 solid 2px;
-    }
-    &::placeholder {
-      color: $secondary-400;
-    }
-    &:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 30px $secondary-50 inset;
-    }
+  input:not([type='submit']):not([type='button']) {
+    @include input();
   }
 }

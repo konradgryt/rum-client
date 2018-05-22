@@ -78,6 +78,11 @@ class ViewEngine {
             }
     }
 
+    toggleSidebar() {
+        let login = ReactDOM.findDOMNode(document.querySelector('#login'));
+        login.classList.toggle('hidden');
+    }
+
     toogleReviews() {
         var pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
             if (pane.classList.contains('show')) {
