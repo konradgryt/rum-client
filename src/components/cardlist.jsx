@@ -21,7 +21,7 @@ class CardList extends React.Component {
   render() {
     return (
       <section>
-          <list items={this.state.list} onRenderCell={(items) => (
+          <div items={this.state.list} onRenderCell={(items) => (
             <section>
                 <Rum name={items.name}
                  image={items.image}

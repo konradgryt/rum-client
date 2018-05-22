@@ -13,6 +13,15 @@ class Utility {
             method: 'POST'
         }).then(response => response.json()) ;
     }
+
+    static saveToLocalStorage(key,value) {
+        localStorage.setItem(key, value);
+    }
+
+    static getFromLocalStorage(key) {
+        var value = localStorage.getItem(key);
+        return value === null ? '' : value;
+    }
 }
 
 export default Utility;
