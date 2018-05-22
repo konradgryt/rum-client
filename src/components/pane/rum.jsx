@@ -36,21 +36,20 @@ class Rum extends React.Component {
         fetch('http://192.168.0.100:8080/rum', {
             method: 'POST',
             body: data
-        })
-            .then(res => res.json())
-            .then(json => {
+        }).then(res => res.json())
+        .then(json => {
                 console.log(json);
                 if (json) {
                     this.setState({
                         message: this.SuccessMessage
                     });
-                    this.props.view.renderCardList();
                 } else {
                     this.setState({
                         message: this.ErrorMessage
                     });
                 }
-            });
+        });    
+        this.props.view.renderCardList();
         event.preventDefault();
     }
 
