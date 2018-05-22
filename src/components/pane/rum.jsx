@@ -69,7 +69,6 @@ class Rum extends React.Component {
         return (
             <section className='rum'>
                 <form onSubmit={this.handleSubmit}>
-                    <h1>Add rum</h1>
                     <div>
                         <label>Name
                             <input id='name' type='text' onChange={(e) => this.handleKeyChange('name', e)}

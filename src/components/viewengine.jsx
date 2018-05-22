@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Utility from './utility';
+//import Utility from './utility';
 //content
 import CardList from './content/cardlist';
 //header
@@ -79,7 +79,7 @@ class ViewEngine {
         this.renderNav();
         this.renderLogin();
         this.renderCardList();
-        this.renderPane();
+        ReactDOM.render(<PaneBody view={this} />, this.paneContainer);
     }
 }
 

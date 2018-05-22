@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PaneHeader from './paneheader';
 import Rum from './rum';
 //import Utility from '../logic/utility';
 
@@ -13,8 +13,8 @@ class PaneBody extends React.Component {
   render() {
     return (
       <section className={this.state.class}> 
-          <i className="material-icons" onClick={() => { this.props.view.unmountPane()}} >close</i>
-          <Rum />
+          <PaneHeader view={this.props.view} />
+          <Rum view={this.props.view}/>
       </section>
     );
   }
