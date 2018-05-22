@@ -8,6 +8,19 @@
   border-right: #1E1E1E solid 1px;
   font-size: 40px;
 
+  &__position-relative {
+    width: 100%;
+    margin-top: 70px;
+    @include flex-column();
+    justify-content: center;
+    position: relative;
+    i {
+      position: absolute;
+      margin-left: 23px;
+      color: gray;
+    }
+  }
+
   &__navitem {
     display: flex;
     width: 100%;
@@ -17,11 +30,11 @@
     font-size: 1.5rem;
 
     &--search {
-      width: 85%;
+      width: 75%;
       font-size: 1.05rem;
-      padding: 2px;
+      padding: 10px 10px 10px 40px;
+      border: none;
       align-self: center;
-      margin-top: 10vh;
     }
   }
 }
