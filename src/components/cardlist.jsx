@@ -6,7 +6,7 @@ class CardList extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {list : []};
   }
 
   componentDidMount() {
@@ -21,9 +21,8 @@ class CardList extends React.Component {
   render() {
     return (
       <section>
-          <div items={this.state.list} onRenderCell={(items) => (
-            <section>
-                <Rum name={items.name}
+         {this.state.list.map(items =>
+           <Rum name={items.name}
                  image={items.image}
                  percentage={items.percentage}
                  yearOfBrew={items.yearOfBrew}
@@ -31,8 +30,7 @@ class CardList extends React.Component {
                  typeOfRum={items.typeOfRum}
                  kettleType={items.kettleType}
                  reviews={items.reviews} />
-            </section>
-        )}/>
+        )}
       </section>
     );
   }
