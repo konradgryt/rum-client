@@ -73,15 +73,15 @@ class Rum extends React.Component {
                     <div>
                         <input id='name' type='text' onChange={(e) => this.handleKeyChange('name', e)}
                                placeholder='Name of rum'/>
-                        <input id='percentage' type='text' onChange={(e) => this.handleKeyChange.bind('percentage', e)}
+                        <input id='percentage' type='text' onChange={(e) => this.handleKeyChange('percentage', e)}
                                placeholder='Percentage'/>
-                        <input id='yearOfBrew' type='text' onChange={(e) => this.handleKeyChange.bind('yearOfBrew', e)}
+                        <input id='yearOfBrew' type='text' onChange={(e) => this.handleKeyChange('yearOfBrew', e)}
                                placeholder='Year of brew'/>
-                        <input id='producer' type='text' onChange={(e) => this.handleKeyChange.bind('producer', e)}
+                        <input id='producer' type='text' onChange={(e) => this.handleKeyChange('producer', e)}
                                placeholder='Producer'/>
-                        <input id='typeOfRum' type='text' onChange={(e) => this.handleKeyChange.bind('typeOfRum', e)}
+                        <input id='typeOfRum' type='text' onChange={(e) => this.handleKeyChange('typeOfRum', e)}
                                placeholder='Type of rum'/>
-                        <input id='kettleType' type='text' onChange={(e) => this.handleKeyChange.bind('kettleType', e)}
+                        <input id='kettleType' type='text' onChange={(e) => this.handleKeyChange('kettleType', e)}
                                placeholder='Kettle type'/>
                         <input hidden id='image-location' type='file' accept='image/*'
                                onChange={this.handleImageChange}/>
