@@ -5,6 +5,7 @@ import NavBar from './navbar';
 import Login from './login';
 import CardList from './cardlist';
 import Overview from './overview';
+import RightPane from './rightpane';
 
 class ViewEngine {
     contentContainer;
@@ -52,6 +53,10 @@ class ViewEngine {
      */
     renderCardList() {
         ReactDOM.render(<CardList view={this} />, this.contentContainer);
+    }
+
+    renderPane() {
+        ReactDOM.render(<RightPane view={this} />, this.paneContainer);
     }
 
     /**

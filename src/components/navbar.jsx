@@ -18,6 +18,8 @@ class NavBar extends React.Component {
     })
   }
 
+
+
   Initial = (
     <Search />
   );
@@ -28,7 +30,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      this.state.navBarType
+        this.state.navBarType
     );
   }
 }
