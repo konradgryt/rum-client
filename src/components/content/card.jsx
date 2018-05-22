@@ -14,9 +14,6 @@ class Card extends React.Component {
 
     focusCard() {
         let pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
-        if (pane.classList.contains('close')) {
-            this.props.view.tooglePane();
-        }
         this.props.view.refreshPane(<RumPane
             view={this.props.view}
             key={this.props.name}
@@ -28,6 +25,9 @@ class Card extends React.Component {
             typeOfRum={this.props.typeOfRum}
             kettleType={this.props.kettleType}
             reviews={this.props.reviews} />, this.props.name);
+        if (pane.classList.contains('close')) {
+            this.props.view.tooglePane();
+        }
     }
 
     render() {

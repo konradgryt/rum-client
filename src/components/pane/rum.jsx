@@ -45,7 +45,6 @@ class Rum extends React.Component {
                         message: this.SuccessMessage
                     });
                     this.props.view.renderCardList();
-                    this.forceUpdate();
                 } else {
                     this.setState({
                         message: this.ErrorMessage

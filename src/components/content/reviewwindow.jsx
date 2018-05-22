@@ -8,10 +8,19 @@ class ReviewWindow extends React.Component {
     this.state = {};
   }
 
+  // {this.props.rumId} 
+  // {this.props.userId}
+
   render() {
     return (
       <section className='reviewwindow'>
-       <textarea rows="4" cols="50" />
+        <form onSubmit={this.handleSubmit}>
+            <div>
+              <input id='description' type='text' onChange={(e) => this.handleKeyChange('description', e)} placeholder='Review'/>
+              <input id='rating' type='text' onChange={(e) => this.handleKeyChange('rating', e)} placeholder='Final Rating'/>
+              <input type='submit' value='Add review'/>
+            </div>
+        </form>
       </section>
     );
   }
