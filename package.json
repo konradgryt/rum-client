@@ -45,9 +45,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "build-css": "node-sass --include-path scss src/input.scss src/styles.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\" "
+    "build": "node scripts/build.js"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -90,9 +88,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "devDependencies": {
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1"
   }
 }
