@@ -72,21 +72,33 @@ class ViewEngine {
             if (pane.classList.contains('close')) {
                 pane.classList.remove('close');
                 pane.classList.add('open');
+                Utility.saveToLocalStorage('taskpaneActive', 'true');
+                if (Utility.getFromLocalStorage('allowReviews') === 'true') {
+                    this.toogleReviews();
+                } else {
+                    this.turnOffReviews();
+                }
             } else if (pane.classList.contains('open')) {
                 pane.classList.remove('open');
                 pane.classList.add('close');
+                Utility.saveToLocalStorage('taskpaneActive', 'false');
             }
     }
 
     toogleReviews() {
         var pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
-            if (pane.classList.contains('show')) {
-                pane.classList.remove('show');
-                pane.classList.add('hide');
-            } else if (pane.classList.contains('hide')) {
+        if (pane.classList.contains('hide')) {
                 pane.classList.remove('hide');
                 pane.classList.add('show');
-            }
+        }
+    }
+    
+    turnOffReviews() {
+        var pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
+        if (pane.classList.contains('show')) {
+            pane.classList.remove('show');
+            pane.classList.add('hide');
+        } 
     }
 
     refreshPane(content, title) {
@@ -100,6 +112,7 @@ class ViewEngine {
         this.renderLogin();
         this.renderCardList();
         Utility.saveToLocalStorage('allowReviews', 'false');
+        Utility.saveToLocalStorage('taskpaneActive', 'false');
     }
 }
 

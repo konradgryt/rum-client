@@ -1,5 +1,4 @@
 import React from 'react';
-//import RumPane from '../pane/rum';
 import Utility from '../utility';
 
 class Overview extends React.Component {
@@ -10,9 +9,16 @@ class Overview extends React.Component {
   }
   componentDidMount() {
     Utility.saveToLocalStorage('allowReviews', 'true');
+    if (Utility.getFromLocalStorage('taskpaneActive') === 'true'){
+     this.props.view.toogleReviews();
+    }
   }
+
   logout() {
     Utility.saveToLocalStorage('allowReviews', 'false');
+    if (Utility.getFromLocalStorage('taskpaneActive') === 'true'){
+     this.props.view.turnOffReviews();
+    }
     this.props.view.renderLogin();
   }
   render() {

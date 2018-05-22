@@ -16,14 +16,6 @@ class CardList extends React.Component {
           list: json
         });
       });
-    // Utility.get('/review').then(json => {
-    //   console.log(json);
-    //     this.setState({
-    //       list: json
-    //     });
-    //   });
-  //}
-
   }
 
   render() {
