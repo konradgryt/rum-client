@@ -66,7 +66,7 @@ export class Register extends React.Component {
         return (
             <section className='register'>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='submit' value='OK'/>
+
                         <input className='register__input' id='nickname' type='text' placeholder='Username'
                                onChange={this.handleNicknameChange}/>
                         <input className='register__input' id='password' type='password'
@@ -75,6 +75,7 @@ export class Register extends React.Component {
                         {this.state.message}
                     </div>
                     <input type='button' value='Sign In' onClick={() => {this.props.view.renderLogin()}}/>
+                    <input type='submit' value='OK'/>
                 </form>
                 <div className='login__new-rum' onClick={this.handleClick}>Add new rum</div>
             </section>
