@@ -58,14 +58,14 @@ class Rum extends React.Component {
     }
 
     SuccessMessage = (
-        <div>
-            RUM ADDED MY MAN
+        <div className='mymanmessage'>
+            Rum successfully added!
         </div>
     );
 
     ErrorMessage = (
         <div>
-            sadface
+            Input is wrong, try again
         </div>
     );
 

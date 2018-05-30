@@ -19,7 +19,7 @@ class NavBar extends React.Component {
 
 
     handleChange = (e) => {
-        if (e.target.value.toString().trim().length < 2) {
+        if (e.target.value.toString().trim().length < 1) {
             this.setState({results: []});
             return;
         }
@@ -80,6 +80,25 @@ class NavBar extends React.Component {
                                         onClick={(e) => this.onClick(item, e)}>{item.name}</div>;
                         })
                     }
+                    <div className='filtering'>
+                        <div className='header'>Filters</div>
+                        <div className="options">
+                            <label><span>Percentage</span><input type="range"/></label>
+                            <label><span>Year of brew</span><input type="range"/></label>
+                            <div className="rum-type">
+                                <div><span>Type of rum</span></div>
+                                <label>Black<input type="checkbox"/></label>
+                                <label>Dark <input type="checkbox"/></label>
+                                <label>Pale <input type="checkbox"/></label>
+                                <label>White<input type="checkbox"/></label>
+                            </div>
+                            <div className="rum-type">
+                                <div><span>Kettle type</span></div>
+                                <label>Pot Still<input type="checkbox"/></label>
+                                <label>Column Still<input type="checkbox"/></label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         );

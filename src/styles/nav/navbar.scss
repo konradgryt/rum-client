@@ -4,9 +4,8 @@
 .navbar {
   @include flex-column();
   background-color: $primary-800;
-  color: #FFF;
   height: 100%;
-
+  color: $primary-100;
   font-size: 40px;
 
   &__button {
@@ -72,8 +71,64 @@
     }
   }
 
-  ul {
-    margin-top: auto;
-    margin-bottom: 20px;
+  .filtering {
+    @include flex-column();
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1rem;
+
+
+
+    .header {
+      font-size: 25px;
+      letter-spacing: 2px;
+      border-bottom: $primary-100 solid 3px;
+      margin: 0 80px;
+    }
+
+    label {
+      margin-top: 30px;
+      padding: 0 40px;
+      @include flex-column();
+      align-items: flex-start;
+
+      input[type='range'] {
+        margin: 10px 0;
+        align-self: center;
+        width: 100%;
+      }
+    }
+
+    .rum-type {
+      margin-top: 40px;
+      @include flex-column();
+      //align-items:
+
+      div {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      label {
+        margin-top: 0;
+        padding: 5px 40px;
+        @include flex-row();
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+          margin: 0;
+        }
+      }
+    }
+
+    .options {
+      @include flex-column();
+
+      input {
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+    }
   }
 }

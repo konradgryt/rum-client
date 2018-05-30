@@ -7,10 +7,11 @@
   @include flex-row();
   flex-direction: row-reverse;
   align-items: flex-end;
+  color: $primary-50;
 
  form {
     @include flex-row();
-   margin-bottom: 20px;
+    margin: auto 0 auto auto;
   }
 
   input[type='submit'] {

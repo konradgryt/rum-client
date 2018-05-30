@@ -3,7 +3,7 @@
 
 .rum {
   @include flex-column();
-  color: #FFF;
+  color: $primary-100;
   height: 100%;
   width: 100%;
   font-size: 40px;
@@ -32,4 +32,10 @@
       }
     }
   }
+}
+
+.mymanmessage {
+  color: $primary-100;
+  margin-top: 25px;
+  font-size: 20px;
 }

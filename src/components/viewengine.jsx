@@ -73,16 +73,18 @@ class ViewEngine {
         nav.classList.toggle('close');
     }
 
-    tooglePane() {
+    tooglePane(checkReviews) {
         var pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
         if (pane.classList.contains('close')) {
             pane.classList.remove('close');
             pane.classList.add('open');
             Utility.saveToLocalStorage('taskpaneActive', 'true');
-            if (Utility.getFromLocalStorage('allowReviews') === 'true') {
-                this.toogleReviews();
-            } else {
-                this.turnOffReviews();
+            if (checkReviews) {
+                if (Utility.getFromLocalStorage('allowReviews') === 'true') {
+                    this.toogleReviews();
+                } else {
+                    this.turnOffReviews();
+                }
             }
         } else if (pane.classList.contains('open')) {
             pane.classList.remove('open');
@@ -92,11 +94,11 @@ class ViewEngine {
     }
 
     toogleReviews() {
-        // var pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
-        // if (pane.classList.contains('hide')) {
-        //         pane.classList.remove('hide');
-        //         pane.classList.add('show');
-        // }
+        var pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
+        if (pane.classList.contains('hide')) {
+                pane.classList.remove('hide');
+                pane.classList.add('show');
+        }
     }
 
     turnOffReviews() {
