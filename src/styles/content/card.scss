@@ -69,6 +69,7 @@
     transition: right 250ms ease;
     padding-top: 10px;
     box-sizing: border-box;
+    cursor: default;
 
     > span {
       text-align: end;
@@ -84,6 +85,7 @@
 
       &.details__review {
         margin-top: 15px;
+        cursor: pointer;
       }
     }
 

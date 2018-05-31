@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 //import Utility from '../utility';
 import Review from './review';
 import RumPane from "../pane/rumpane";
+import ReviewWindow from "./reviewwindow";
 
 class Card extends React.Component {
 
@@ -31,6 +32,16 @@ class Card extends React.Component {
         event.target.parentNode.parentNode.classList.toggle('hidden');
     }
 
+    writeReview() {
+        let pane = ReactDOM.findDOMNode(document.querySelector('#pane'));
+        this.props.view.refreshPane(<ReviewWindow
+
+        />);
+        if (pane.classList.contains('close')) {
+            this.props.view.tooglePane(true);
+        }
+    }
+
     render() {
         return (
             <section className='card hidden'>
@@ -54,7 +65,7 @@ class Card extends React.Component {
                     <span>{this.props.typeOfRum}</span>
                     <span className='details__header'>Kettle type</span>
                     <span>{this.props.kettleType}</span>
-                    <span className='details__review'>Write review</span>
+                    <span className='details__review' onClick={() => this.writeReview()}>Write review</span>
                 </div>
             </section>
         );
