@@ -94,7 +94,7 @@ class ViewEngine {
     }
 
     toogleReviews() {
-        var pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
+        const pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
         if (!pane) return;
         if (pane.classList.contains('hide')) {
                 pane.classList.remove('hide');
@@ -103,7 +103,7 @@ class ViewEngine {
     }
 
     turnOffReviews() {
-        var pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
+        const pane = ReactDOM.findDOMNode(document.querySelector('#makereview'));
         if (!pane) return;
         if (pane.classList.contains('show')) {
             pane.classList.remove('show');

@@ -1,0 +1,41 @@
+@import "../flex";
+@import "../mixins";
+
+.reviewwindow {
+
+  color: $primary-100;
+
+  form {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    div {
+      @include flex-column();
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 10px;
+    }
+  }
+
+  input {
+    margin-bottom: 20px;
+    width: 85%;
+  }
+
+
+  input[type='text'] {
+    @include input();
+  }
+
+  input[type='submit'] {
+    @include primary();
+    align-self: flex-end;
+    width: 40%;
+  }
+
+  input[type='file'] {
+    margin: 20px auto;
+    width: 90%;
+  }
+}

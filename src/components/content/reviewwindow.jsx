@@ -1,15 +1,16 @@
 import React from 'react';
+
 //import Utility from '../logic/utility';
 
 class ReviewWindow extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
 
-  handleSubmit(event) {
-     let data = new FormData();
+    handleSubmit(event) {
+        let data = new FormData();
         const fileField = document.querySelector('input[type="file"]');
 
         data.append('message', this.state.message);
@@ -20,11 +21,11 @@ class ReviewWindow extends React.Component {
             method: 'POST',
             body: data
         }).then(res => res.json())
-          .then(json => {
+            .then(json => {
                 console.log(json);
-        });    
+            });
         event.preventDefault();
-        
+
     }
 
     handleImageChange(event) {
@@ -37,20 +38,22 @@ class ReviewWindow extends React.Component {
         this.setState({[key]: event.target.value});
     }
 
-  render() {
-    return (
-      <section className='reviewwindow'>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-            <div>
-              <input type='file' accept='image/*' onChange={(e) => this.handleImageChange(e)}/>
-              <input id='rating' type='text' onChange={(e) => this.handleKeyChange('rating', e)} placeholder='Rating'/>
-              <input id='message' type='text' onChange={(e) => this.handleKeyChange('message', e)} placeholder='Message'/>
-              <input type='submit' value='Add review'/>
-            </div>
-        </form>
-      </section>
-    );
-  }
+    render() {
+        return (
+            <section className='reviewwindow'>
+                <form onSubmit={(e) => this.handleSubmit(e)}>
+                    <div>
+                        <input id='rating' type='text' onChange={(e) => this.handleKeyChange('rating', e)}
+                               placeholder='Rating'/>
+                        <input id='message' type='text' onChange={(e) => this.handleKeyChange('message', e)}
+                               placeholder='Message'/>
+                        <input type='file' accept='image/*' onChange={(e) => this.handleImageChange(e)}/>
+                        <input type='submit' value='Add review'/>
+                    </div>
+                </form>
+            </section>
+        );
+    }
 }
 
 export default ReviewWindow;
